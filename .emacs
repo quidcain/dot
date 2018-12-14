@@ -40,9 +40,9 @@
             (setq tab-width 4)
             ;; (setq indent-line-function 'insert-tab)
             ;; (setq tab-stop-list (number-sequence 4 200 4))
+            (setq sgml-basic-offset 4)
             (smart-tabs-mode-enable)
             (smart-tabs-advice sgml-indent-line sgml-basic-offset)
-            ;;(setq sgml-basic-offset 4)
             ))
 
 (add-hook 'less-css-mode-hook
