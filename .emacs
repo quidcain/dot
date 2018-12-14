@@ -45,6 +45,16 @@
             (smart-tabs-advice sgml-indent-line sgml-basic-offset)
             ))
 
+(add-hook 'web-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode t)
+            (setq tab-width 2)
+            (setq web-mode-markup-indent-offset 2)
+            (smart-tabs-mode-enable)
+            (smart-tabs-advice web-mode-indent-line
+                               web-mode-markup-indent-offset)
+            ))
+
 (add-hook 'less-css-mode-hook
 	  (lambda ()
             (setq indent-tabs-mode nil)
