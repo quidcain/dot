@@ -66,3 +66,4 @@
 (add-to-list 'auto-mode-alist '("\\.\\(jsp\\|jspf\\|tag\\)\\'" . html-mode))
 
 (desktop-save-mode 1)
+(setq vc-follow-symlinks nil)
