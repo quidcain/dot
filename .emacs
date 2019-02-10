@@ -73,7 +73,7 @@
             (setq indent-tabs-mode t)
             (setq tab-width 4)))
 
-(add-to-list 'auto-mode-alist '("\\.\\(jsp\\|jspf\\|tag\\)\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(jsp\\|jspf\\|tag\\)\\'" . web-mode))
 
 (desktop-save-mode 1)
 (setq vc-follow-symlinks nil)
