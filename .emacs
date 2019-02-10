@@ -47,19 +47,16 @@
 
 (add-hook 'web-mode-hook
           (lambda ()
-            (setq indent-tabs-mode t)
             (setq tab-width 2)
             (setq web-mode-markup-indent-offset 2)
-            (smart-tabs-mode-enable)
-            (smart-tabs-advice web-mode-indent-line
-                               web-mode-markup-indent-offset)
+            (setq web-mode-code-indent-offset 2)
             ))
 
 (add-hook 'less-css-mode-hook
-	  (lambda ()
+          (lambda ()
             (setq indent-tabs-mode nil)
             ;; (setq tab-width 2)
-            ;; (setq indent\-line-function 'insert-tab)
+            ;; (setq indent-line-function 'insert-tab)
             ;; (setq tab-stop-list (number-sequence 2 200 2))
             (setq css-indent-offset 2)))
 
@@ -74,6 +71,7 @@
             (setq tab-width 4)))
 
 (add-to-list 'auto-mode-alist '("\\.\\(jsp\\|jspf\\|tag\\)\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 
 (desktop-save-mode 1)
 (setq vc-follow-symlinks nil)
