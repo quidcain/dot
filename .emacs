@@ -45,11 +45,16 @@
             (smart-tabs-advice sgml-indent-line sgml-basic-offset)
             ))
 
+(defun is-react-file ()
+  (string-match-p "import.*React" (buffer-string)))
+
 (add-hook 'web-mode-hook
           (lambda ()
             (setq tab-width 2)
             (setq web-mode-markup-indent-offset 2)
             (setq web-mode-code-indent-offset 2)
+            (if (is-react-file)
+              (web-mode-set-content-type "jsx"))
             ))
 
 (add-hook 'less-css-mode-hook
@@ -60,10 +65,11 @@
             ;; (setq tab-stop-list (number-sequence 2 200 2))
             (setq css-indent-offset 2)))
 
-(add-hook 'js-mode-hook
+(add-hook 'js2-mode-hook
           (lambda ()
             (setq tab-width 2)
-            (setq js-indent-level 2)))
+            (setq js2-basic-offset 2)
+            ))
 
 (add-hook 'java-mode-hook
           (lambda ()
