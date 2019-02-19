@@ -13,14 +13,17 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(custom-enabled-themes (quote (tsdh-dark)))
+ '(custom-enabled-themes (quote (ample)))
+ '(custom-safe-themes
+   (quote
+    ("c9ddf33b383e74dac7690255dd2c3dfa1961a8e8a1d20e401c6572febef61045" "bf798e9e8ff00d4bf2512597f36e5a135ce48e477ce88a0764cfb5d8104e8163" "36ca8f60565af20ef4f30783aa16a26d96c02df7b4e54e9900a5138fb33808da" default)))
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "https://stable.melpa.org/packages/"))))
+     ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (web-mode smart-tabs-mode clojure-mode csv-mode flycheck less-css-mode)))
+    (ample-theme web-mode smart-tabs-mode clojure-mode csv-mode flycheck less-css-mode)))
  '(whitespace-style
    (quote
     (face trailing tabs spaces lines newline empty space-before-tab space-mark tab-mark newline-mark))))
