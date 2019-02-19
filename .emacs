@@ -23,7 +23,7 @@
      ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (ample-theme web-mode smart-tabs-mode clojure-mode csv-mode flycheck less-css-mode)))
+    (counsel ample-theme web-mode smart-tabs-mode clojure-mode csv-mode flycheck less-css-mode)))
  '(whitespace-style
    (quote
     (face trailing tabs spaces lines newline empty space-before-tab space-mark tab-mark newline-mark))))
@@ -81,6 +81,23 @@
 
 (add-to-list 'auto-mode-alist '("\\.\\(jsp\\|jspf\\|tag\\)\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
 (desktop-save-mode 1)
 (setq vc-follow-symlinks nil)
