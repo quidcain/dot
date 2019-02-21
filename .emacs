@@ -102,3 +102,6 @@
 (desktop-save-mode 1)
 (setq vc-follow-symlinks nil)
 (define-key global-map "\M-*" 'pop-tag-mark)
+
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
