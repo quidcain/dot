@@ -16,7 +16,7 @@ else
        `emacs $@`
     else
        shift
-       `emacsclient $@`
+       `emacsclient -n $@`
     fi
 fi
 
