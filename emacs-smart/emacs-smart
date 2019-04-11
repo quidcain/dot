@@ -19,5 +19,3 @@ else
        `emacsclient -n $@`
     fi
 fi
-
-#TODO: Do not restore desktop without --no-desktop if -s is passed
