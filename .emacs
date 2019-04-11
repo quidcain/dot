@@ -107,3 +107,13 @@
 ;;enable shift+arrow buffer navigation
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
+
+(global-set-key "\C-x\C-b" 'buffer-menu)
+
+(setq inhibit-startup-screen t)
+
+(when (member "-s" command-line-args)
+  (server-start))
+
+(setq command-line-args
+      (delete "-s" command-line-args))

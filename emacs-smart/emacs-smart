@@ -1,0 +1,23 @@
+#!/bin/bash
+
+for arg in "$@"
+do
+    serverp="-s"
+    if [[ "$arg" =~ $serverp ]]; then
+        server=true
+    fi
+done
+
+frame_exists=`emacsclient -e "(member \"$DISPLAY\" (mapcar 'terminal-name (frames-on-display-list)))" 2>/dev/null`
+if [[ "$server" = "" ]]; then
+    `emacs --no-desktop $@` #without session
+else
+    if [[ "$frame_exists" = "" ]]; then #nothing is open
+       `emacs $@`
+    else
+       shift
+       `emacsclient $@`
+    fi
+fi
+
+#TODO: Do not restore desktop without --no-desktop if -s is passed
