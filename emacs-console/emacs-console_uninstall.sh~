@@ -1,0 +1,4 @@
+script_name=emacs-console
+sudo unlink /usr/local/bin/$script_name
+sudo rm /usr/share/applications/$script_name.desktop
+sudo update-alternatives --remove editor /usr/local/bin/emacs-console
