@@ -100,9 +100,10 @@
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
-(desktop-save-mode 1)
-(setq vc-follow-symlinks nil)
-(define-key global-map "\M-*" 'pop-tag-mark)
+(desktop-save-mode 1) ;;enable restoring of opened buffers
+(setq vc-follow-symlinks nil) ;;disable warning of using 'symlinked' .emacs file
+(define-key global-map "\M-*" 'pop-tag-mark) ;;smth related to tags
 
+;;enable shift+arrow buffer navigation
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
