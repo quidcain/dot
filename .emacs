@@ -119,3 +119,21 @@
 
 (setq make-backup-files nil) ; stop creating backup~ files
 (setq auto-save-default nil) ; stop creating #autosave# files
+
+(define-ibuffer-sorter filename-or-dired
+  "Sort the buffers by their pathname."
+  (:description "filenames plus dired")
+  (string-lessp
+   (with-current-buffer (car a)
+     (or buffer-file-name
+         (if (eq major-mode 'dired-mode)
+             (expand-file-name dired-directory))
+         ;; so that all non pathnames are at the end
+         "~"))
+   (with-current-buffer (car b)
+     (or buffer-file-name
+         (if (eq major-mode 'dired-mode)
+             (expand-file-name dired-directory))
+         ;; so that all non pathnames are at the end
+         "~"))))
+(define-key ibuffer-mode-map (kbd "s p")     'ibuffer-do-sort-by-filename-or-dired)
