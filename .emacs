@@ -23,7 +23,7 @@
      ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (rg cider clojure-mode try counsel ample-theme web-mode smart-tabs-mode clojure-mode csv-mode flycheck less-css-mode)))
+    (smex rg cider clojure-mode try counsel ample-theme web-mode smart-tabs-mode clojure-mode csv-mode flycheck less-css-mode)))
  '(whitespace-style
    (quote
     (face trailing tabs spaces lines newline empty space-before-tab space-mark tab-mark newline-mark))))
