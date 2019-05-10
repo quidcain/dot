@@ -119,11 +119,3 @@
 
 (setq make-backup-files nil) ; stop creating backup~ files
 (setq auto-save-default nil) ; stop creating #autosave# files
-
-(defun backward-whitespace (arg)
-  "Move point to the beginning of the current sequence of whitespace characters."
-  (interactive "^p")
-  (forward-whitespace (- arg)))
-
-(global-set-key (kbd "M-b") 'backward-whitespace)
-(global-set-key (kbd "M-f") 'forward-whitespace)
