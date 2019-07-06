@@ -51,6 +51,9 @@
 (defun is-react-file ()
   (string-match-p "import.*React" (buffer-string)))
 
+(setq web-mode-content-types-alist
+  '(("jsx" . "\\.js[x]?\\'")))
+
 (add-hook 'web-mode-hook
           (lambda ()
             (setq tab-width 2)
