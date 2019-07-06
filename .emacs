@@ -71,6 +71,12 @@
             ;; (setq tab-stop-list (number-sequence 2 200 2))
             (setq css-indent-offset 2)))
 
+(add-hook 'css-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode nil)
+            (setq css-indent-offset 2)))
+
+
 (add-hook 'js2-mode-hook
           (lambda ()
             (setq tab-width 2)
