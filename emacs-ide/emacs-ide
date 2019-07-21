@@ -1,0 +1,8 @@
+#!/bin/bash
+
+frame_exists=`emacsclient -e "(member \"$DISPLAY\" (mapcar 'terminal-name (frames-on-display-list)))" 2>/dev/null`
+if [[ "$frame_exists" = "" ]]; then
+    `emacs -s $@`
+else
+    `emacsclient -n $@`
+fi
