@@ -8,4 +8,5 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/goyo.vim'
 call plug#end()
