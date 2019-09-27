@@ -23,7 +23,7 @@
      ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (smex rg cider clojure-mode try counsel ample-theme web-mode smart-tabs-mode clojure-mode csv-mode flycheck less-css-mode)))
+    (expand-region f smex rg cider clojure-mode try counsel ample-theme web-mode smart-tabs-mode clojure-mode csv-mode flycheck less-css-mode)))
  '(whitespace-style
    (quote
     (face trailing tabs spaces lines newline empty space-before-tab space-mark tab-mark newline-mark))))
@@ -134,3 +134,5 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (dired-hide-details-mode 1)))
+
+(global-set-key (kbd "C-=") 'er/expand-region)
