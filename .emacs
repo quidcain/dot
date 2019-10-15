@@ -50,14 +50,10 @@
 
 (add-hook 'html-mode-hook
           (lambda ()
-            (setq indent-tabs-mode t)
             (setq tab-width 4)
-            ;; (setq indent-line-function 'insert-tab)
-            ;; (setq tab-stop-list (number-sequence 4 200 4))
-            (setq sgml-basic-offset 4)
+            (set-indent sgml-basic-offset t 1)
             (smart-tabs-mode-enable)
-            (smart-tabs-advice sgml-indent-line sgml-basic-offset)
-            ))
+            (smart-tabs-advice sgml-indent-line sgml-basic-offset)))
 
 (defun is-react-file ()
   (string-match-p "import.*React" (buffer-string)))
@@ -76,25 +72,19 @@
 
 (add-hook 'less-css-mode-hook
           (lambda ()
-            (setq indent-tabs-mode nil)
-            ;; (setq tab-width 2)
-            ;; (setq indent-line-function 'insert-tab)
-            ;; (setq tab-stop-list (number-sequence 2 200 2))
-            (setq css-indent-offset 2)))
+            (set-indent css-indent-offset nil 2)))
 
 (add-hook 'js2-mode-hook
           (lambda ()
             (setq tab-width 2)
-            (setq js2-basic-offset 2)
-            ))
+            (set-indent js2-basic-offset nil 2)))
 
 (add-hook 'java-mode-hook
           (lambda ()
-            (setq indent-tabs-mode t)
-            (setq tab-width 4)))
+            (setq tab-width 4)
+            (set-indent c-basic-offset t 1)))
 
 (add-to-list 'auto-mode-alist '("\\.\\(jsp\\|jspf\\|tag\\)\\'" . web-mode))
-
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 
