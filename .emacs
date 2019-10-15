@@ -71,12 +71,6 @@
             ;; (setq tab-stop-list (number-sequence 2 200 2))
             (setq css-indent-offset 2)))
 
-(add-hook 'css-mode-hook
-          (lambda ()
-            (setq indent-tabs-mode nil)
-            (setq css-indent-offset 2)))
-
-
 (add-hook 'js2-mode-hook
           (lambda ()
             (setq tab-width 2)
@@ -89,6 +83,8 @@
             (setq tab-width 4)))
 
 (add-to-list 'auto-mode-alist '("\\.\\(jsp\\|jspf\\|tag\\)\\'" . web-mode))
+
+
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 
 (ivy-mode 1)
@@ -136,3 +132,16 @@
             (dired-hide-details-mode 1)))
 
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+
+(defmacro set-indent (mode-hook indent-func tabs size tab-width)
+  `(add-hook ,mode-hook
+             (lambda ()
+               (setq indent-tabs-mode ,tabs)
+               (setq tab-width ,tab-width)
+               (if ,tabs
+                   (setq ,indent-func (* ,size ,tab-width))
+                   (setq ,indent-func ,size))
+               )))
+
+(set-indent 'css-mode-hook css-indent-offset nil 2 2)
