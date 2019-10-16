@@ -133,3 +133,22 @@
             (dired-hide-details-mode 1)))
 
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+;;after-change-major-mode-hook
+;;Documentation:
+;;Normal hook run at the very end of major mode functions
+(add-hook 'after-change-major-mode-hook
+          (lambda ()
+            (message "hello guys")))
+
+;(shell-command-to-string "java -jar ~/indentor/target/indentor.jar get -e java -p ~/indentor/")
+;(shell-command-to-string "java -jar ~/indentor/target/indentor.jar get -e js -p ./")
+
+
+;(require 'json)
+
+;(let* ((json-object-type 'hash-table)
+;       (json-array-type 'list)
+;       (json-key-type 'string)
+;       (json (json-read-file "test.json")))
+;  (car (gethash "projects" json)))
